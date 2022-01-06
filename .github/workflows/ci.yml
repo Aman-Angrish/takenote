@@ -1,0 +1,30 @@
+name: ci workflow
+
+env:  
+  CONTINUE_ON_ERROR: false
+
+on:
+  pull_request:
+    branches: [develop]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+        continue-on-error: ${{ env.CONTINUE_ON_ERROR }}
+        with:
+          ref: ${{ github.REF }}
+          fetch-depth: 0
+          
+      - name: use nodejs
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm test -- --coverage
+        env:
+          CI: true
