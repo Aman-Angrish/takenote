@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taniarascia/takenote"
+    "url": "git+https://github.com/aman-angrish/takenote"
   },
   "keywords": [
     "notes",
@@ -39,7 +39,7 @@
     "github"
   ],
   "bugs": {
-    "url": "https://github.com/taniarascia/takenote/issues"
+    "url": "https://github.com/aman-angrish/takenote/issues"
   },
   "homepage": "https://takenote.dev",
   "husky": {
